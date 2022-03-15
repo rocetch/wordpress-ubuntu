@@ -4,12 +4,18 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM php:7.4-apache
+FROM rocetch/php:7.4-focal-apache
 
 # persistent dependencies
 RUN set -eux; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
+		libfreetype6 \
+		libjpeg8 \
+		libmagickwand-6.q16-6 \
+		libpng16-16 \
+		libsodium23 \
+		libzip5 \
 # Ghostscript is required for rendering PDF previews
 		ghostscript \
 	; \
